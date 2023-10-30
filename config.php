@@ -9,7 +9,7 @@ $port = "3306";
 
 
 # Application settings
-$appname = "customemailpub";
+$appname = "emailpub";
 $author = "Kepha Okari";
 $email = "kepha.okari@olivetreemobile.co";
 $description = "Pick the email request logged in outgoing_emails table.";
