@@ -1,16 +1,9 @@
 <?php
 
 # Database settings
-// $hostnameOrIP = "127.0.0.1";
-// $hostnameOrIP = "localhost";
-// $userName = "root";
-// $password = "DarthVader-2012";
-// $dbName = "bongasms";
-// $port = "3306";
-
-$hostnameOrIP = "159.65.239.175";
-$userName = "isengardappz";
-$password = "!23qweASD##";
+$hostnameOrIP = "localhost";
+$userName = "root";
+$password = "DarthVader-2012";
 $dbName = "bongasms";
 $port = "3306";
 
