@@ -9,8 +9,8 @@ if [ -z "$PID" ]; then
 
     read -p "Do you want to start it? (y/n): " choice
     if [ "$choice" == "y" ]; then
-        sudo /etc/init.d/custom_email_requests_app start
-        tail -f /var/log/applications/customEmailRequestsApp.log
+        sudo /etc/init.d/customemailpub start
+        tail -f /var/log/applications/customEmailPub.log
     else
         echo "Ignoring."
     fi
@@ -25,8 +25,8 @@ echo "Process stopped successfully."
 
 read -p "Do you want to start it again? (y/n): " choice
 if [ "$choice" == "y" ]; then
-    sudo /etc/init.d/custom_email_requests_app start
-    tail -f /var/log/applications/customEmailRequestsApp.log
+    sudo /etc/init.d/customemailpub start
+    tail -f /var/log/applications/customEmailPub.log
 else
     echo "Ignoring the start request."
 fi

@@ -16,13 +16,13 @@ $port = "3306";
 
 
 # Application settings
-$appname = "custom_email_requests_app";
+$appname = "customemailpub";
 $author = "Kepha Okari";
 $email = "kepha.okari@olivetreemobile.co";
 $description = "Pick the email request logged in outgoing_emails table.";
 $dir = dirname(__FILE__);
 $executable = "requests.php";
-$logfile = "/var/log/applications/customEmailRequestsApp.log";
+$logfile = "/var/log/applications/customEmailPub.log";
 
 
 ## DO NOT EDIT BELOW THIS LINE ##
