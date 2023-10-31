@@ -35,7 +35,7 @@
 #!/bin/bash
 
 # Source the config.php file to import variables
-source config.php
+source /srv/CustomEmailPublisherDaemon/config.php
 
 # Find the PID of the running process
 PID=$(pgrep -f '/usr/bin/php /srv/CustomEmailPublisherDaemon/requests.php')
