@@ -12,7 +12,7 @@ $api_key = "3d65cd3b2a075c359e9751336ec51af5";
 $base_url = "https://emailapi.netcorecloud.net/v5.1/mail/send";
 
 # Application settings
-$appname = "batchrequest";
+$appname = "emailpub";
 $author = "Kepha Okari";
 $email = "kepha.okari@olivetreemobile.co";
 $description = "Pick the email request logged in outgoing_emails table.";
