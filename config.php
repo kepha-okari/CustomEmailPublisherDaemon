@@ -16,7 +16,7 @@ $base_url = "https://emailapi.netcorecloud.net/v5.1/mail/send";
 $author = "Kepha Okari";
 $email = "kepha.okari@olivetreemobile.co";
 $description = "Pick the email request logged in outgoing_emails table.";
-// $dir = dirname(__FILE__);
+$dir = dirname(__FILE__);
 $executable = "requests.php";
 $logfile = "/var/log/applications/customEmailPub.log";
 
