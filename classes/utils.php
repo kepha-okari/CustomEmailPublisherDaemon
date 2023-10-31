@@ -1,7 +1,10 @@
 <?php
 require_once "PepipostEmailSender.php";
-$api_key = "3d65cd3b2a075c359e9751336ec51af5";
-$pepipostSender = new PepipostEmailSender($api_key);
+require_once "../config.php";
+
+
+// $api_key = ;
+$pepipostSender = new PepipostEmailSender($api_key,$base_url);
 
 $fromEmail = "admin.test@email.olivetreehub.com";
 $fromName = "";

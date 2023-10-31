@@ -4,8 +4,9 @@ class PepipostEmailSender {
     private $api_key;
     private $base_url = "https://emailapi.netcorecloud.net/v5.1/mail/send";
 
-    public function __construct($api_key) {
+    public function __construct($api_key, $base_url) {
         $this->api_key = $api_key;
+        $this->base_url = $base_url;
     }
 
     public function sendEmail($fromEmail, $fromName=null, $toEmail, $toName=null, $subject, $htmlContent, $attributes = [], $attachments = [], $bcc = [], $cc = [], $schedule = null) {
