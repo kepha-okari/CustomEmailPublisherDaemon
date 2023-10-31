@@ -36,7 +36,7 @@
 #!/bin/bash
 
 # Source the config.php file to import variables
-source config.php
+source config.sh
 echo "Process is not running."
 
 
