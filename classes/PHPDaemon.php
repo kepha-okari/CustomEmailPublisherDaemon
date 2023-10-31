@@ -28,10 +28,9 @@ class PHPDaemon
     {
         try {
             error_log("INFO :: " . date("y-m-d H:i:s") . " Connecting to RabbitMQ" . "\n", 3, $log);
-            $connection = new AMQPStreamConnection('172.17.0.2', 5672, 'guest', 'guest');
+            $connection = new AMQPStreamConnection('161.35.6.91', 5672, 'guest', 'guest');
             $channel = $connection->channel();
-            // $CHANNEL_NAME = "send_bulk_email_exchange";
-            $CHANNEL_NAME = "sendBulkEmailsExchange";
+            $CHANNEL_NAME = "send_bulk_email_exchange";
             $channel->exchange_declare($CHANNEL_NAME, 'topic', false, true, false);
 
             error_log("INFO :: " . date("y-m-d H:i:s") . " CONNECTED to RabbitMQ" . "\n", 3, $log);
@@ -74,7 +73,8 @@ class PHPDaemon
                 }
 
      
-                $routingKey = 'topic.key';
+                // $routingKey = 'topic.key';
+                $routingKey = 'email.bulk';
                 $numRows = count($dataList);
 
                 // Publish messages to RabbitMQ
