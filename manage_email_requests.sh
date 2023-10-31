@@ -37,9 +37,11 @@
 
 # Source the config.php file to import variables
 source config.php
+echo "Process is not running."
+
 
 # Find the PID of the running process
-PID=$(pgrep -f "/usr/bin/php /srv/CustomEmailPublisherDaemon/$appExecutable")
+PID=$(pgrep -f "/usr/bin/php /srv/CustomEmailPublisherDaemon/requests.php")
 
 if [ -z "$PID" ]; then
     echo "Process is not running."
