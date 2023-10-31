@@ -35,7 +35,10 @@
 #!/bin/bash
 
 # Source the config.php file to import variables
-source /srv/CustomEmailPublisherDaemon/config.php
+# source /srv/CustomEmailPublisherDaemon/config.php
+# # Execute a PHP script to extract and export the variables
+source <(php -r 'include "/srv/CustomEmailPublisherDaemon/config.php"; foreach (get_defined_vars() as $key => $value) { echo "export $key=\"$value\"\n"; }')
+
 
 # Find the PID of the running process
 PID=$(pgrep -f '/usr/bin/php /srv/CustomEmailPublisherDaemon/requests.php')
