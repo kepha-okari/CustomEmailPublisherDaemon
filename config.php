@@ -16,7 +16,7 @@ $base_url = "https://emailapi.netcorecloud.net/v5.1/mail/send";
 $author = "Kepha Okari";
 $email = "kepha.okari@olivetreemobile.co";
 $description = "Pick the email request logged in outgoing_emails table.";
-$dir = dirname(__FILE__);
+// $dir = dirname(__FILE__);
 $executable = "requests.php";
 $logfile = "/var/log/applications/customEmailPub.log";
 
@@ -28,7 +28,7 @@ $options = array(
     "authorEmail" => $email,            # Author email
     "appName" => $appname,              # The application name
     "appDescription" => $description,   # Daemon description
-    "appDir" => $dir,                   # The home directory of the daemon
+    "appDir" => dirname(__FILE__),                   # The home directory of the daemon
     "appExecutable" => $executable,     # The executable daemon file
     "logLocation" => $logfile,          # Log file location
     "logPhpErrors" => "TRUE",           # Reroute PHP errors to log function
