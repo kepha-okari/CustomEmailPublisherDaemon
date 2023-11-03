@@ -1,0 +1,6 @@
+# github.com/go-sql-driver/mysql v1.7.1
+## explicit
+github.com/go-sql-driver/mysql
+# github.com/streadway/amqp v1.1.0
+## explicit
+github.com/streadway/amqp

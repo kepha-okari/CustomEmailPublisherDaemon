@@ -3,6 +3,10 @@ require_once("DatabaseUtilities.php");
 require_once("WorkerException.php");
 require_once "PepipostEmailSender.php";
 
+require_once __DIR__ . '/vendor/autoload.php';
+use PhpAmqpLib\Connection\AMQPStreamConnection;
+use PhpAmqpLib\Message\AMQPMessage;
+
 /**
  * Script to process something.
  */
@@ -26,11 +30,26 @@ class PHPDaemon
      */
     public function process($mysqli, $log)
     {
+       
+
+        //Connect to rabbitmq
+        //$connection = new AMQPStreamConnection('localhost', 5672, 'guest', 'guest');
+        $connection = new AMQPStreamConnection('167.99.5.244', 5672, 'chaliblues', 'tsunamisblues123qwe');
+        $channel = $connection->channel();
+
+        //Declare the exchange..bongasms.custom.bulk
+        $channel->exchange_declare('bongasms.bulk.custom', 'topic', true, false, false);
+
+        //Simulate...select 10k contacts
+        $db = mysqli_connect('localhost', 'root', 'r00t','bongasms');
+        $msisdnExtracts ="SELECT * FROM `contacts` LIMIT 1;";
+
+
         try {
             error_log("INFO :: " . date("y-m-d H:i:s") . " Connecting to RabbitMQ" . "\n", 3, $log);
-            $connection = new AMQPStreamConnection('161.35.6.91', 5672, 'guest', 'guest');
+            $connection = new AMQPStreamConnection('169.35.63.43', 5672, 'guest', 'guest');
             $channel = $connection->channel();
-            $CHANNEL_NAME = "send_bulk_email_exchange";
+            $CHANNEL_NAME = "email.bulk";
             $channel->exchange_declare($CHANNEL_NAME, 'topic', false, true, false);
 
             error_log("INFO :: " . date("y-m-d H:i:s") . " CONNECTED to RabbitMQ" . "\n", 3, $log);
